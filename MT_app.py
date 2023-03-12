@@ -181,8 +181,8 @@ with tab3:
                 #os.environ["HDF5_USE_FILE_LOCKING"] = "FALSE"
                 file_args = os.path.join(cwd,"models",prediction_job_name,'my_model.hdf5')
                 st.write(file_args)
-                file1 = h5py.File(file_args,'r')
-                model = tf.keras.models.load_model(file1)
+                #file1 = h5py.File(file_args,'r')
+                model = tf.keras.models.load_model(file_args)
                 prediction = import_and_predict(image, model)
                 prediction_job_name_list = prediction_job_name.split("_")
                 prediction_job_name = prediction_job_name_list[0]
