@@ -14,6 +14,7 @@ import subprocess
 from subprocess import Popen
 import os
 import webbrowser
+import h5py
 
 ##########################################################################################
 
@@ -177,7 +178,8 @@ with tab3:
                 #prediction_model_args = "MT/models/" + str(prediction_job_name)
                 #prediction_model_args = prediction_model_args.replace(" ","")
                 #st.write(prediction_model_args)
-                model = tf.keras.models.load_model('my_model.hdf5')
+                file1 = h5py.File('my_model.hdf5','r')
+                model = tf.keras.models.load_model(file)
                 prediction = import_and_predict(image, model)
                 prediction_job_name_list = prediction_job_name.split("_")
                 prediction_job_name = prediction_job_name_list[0]
