@@ -176,11 +176,12 @@ with tab3:
             with st.spinner('Prediction in Progress...'):
                 prediction_model_args = "/models" + str(prediction_job_name) + "my_model.hdf5"
                 prediction_model_args = prediction_model_args.replace(" ","")
+                st.write(prediction_model_args)
                 model = tf.keras.models.load_model(prediction_model_args)
                 prediction = import_and_predict(image, model)
                 prediction_job_name_list = prediction_job_name.split("_")
                 prediction_job_name = prediction_job_name_list[0]
                 prediction_dataset_args = os.path.join("/datasets",prediction_job_name,"Training")
-                st.write(os.listdir (prediction_dataset_args))
+                #st.write(os.listdir (prediction_dataset_args))
                 st.write("Classification",np.argmax(prediction))
             st.success('Prediction Completed', icon="✅")
