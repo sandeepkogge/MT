@@ -174,7 +174,7 @@ with tab3:
         st.image(image, use_column_width=False)
         if st.button("Start Prediction"):
             with st.spinner('Prediction in Progress...'):
-                prediction_model_args = "/models/" + str(prediction_job_name) + "/my_model.hdf5"
+                prediction_model_args = "MT/models/" + str(prediction_job_name) + "/my_model.hdf5"
                 prediction_model_args = prediction_model_args.replace(" ","")
                 st.write(prediction_model_args)
                 model = tf.keras.models.load_model('prediction_model_args')
