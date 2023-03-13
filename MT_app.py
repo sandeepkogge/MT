@@ -180,6 +180,6 @@ with tab3:
                 prediction_job_name_list = prediction_job_name.split("_")
                 prediction_job_name = prediction_job_name_list[0]
                 prediction_dataset_args = os.path.join(cwd,"datasets",prediction_job_name,"Training")
-                st.write(os.listdir (prediction_dataset_args))
+                #st.write(os.listdir (prediction_dataset_args))
                 st.write("Classification",np.argmax(prediction))
             st.success('Prediction Completed', icon="✅")
