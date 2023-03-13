@@ -21,7 +21,6 @@ from tensorflow.keras.layers import Flatten, Dense, Dropout
 from tensorflow.keras.models import Model
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import pandas as pd
-import scipy.integrate as integrate
 import scipy
 
 ##########################################################################################
