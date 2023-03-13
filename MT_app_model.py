@@ -4,7 +4,7 @@ Created on Thu Jun 25 04:09:59 2020
 
 @author: Lenovo
 """
-
+import tensorflow
 from tensorflow.keras.applications.inception_v3 import InceptionV3
 from tensorflow.keras.applications.vgg16 import VGG16
 from tensorflow.keras.applications.vgg19 import VGG19
