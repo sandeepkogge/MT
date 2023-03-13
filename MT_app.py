@@ -14,12 +14,11 @@ import subprocess
 from subprocess import Popen
 import os
 import webbrowser
-import h5py
 
 ##########################################################################################
 
-cwd = os.getcwd ()
-os.chdir(cwd)
+#cwd = os.getcwd ()
+#os.chdir(cwd)
 
 ##########################################################################################
 
@@ -177,16 +176,12 @@ with tab3:
             with st.spinner('Prediction in Progress...'):
                 #prediction_model_args = "MT/models/" + str(prediction_job_name)
                 #prediction_model_args = prediction_model_args.replace(" ","")
-                #st.write(cwd)
-                #os.environ["HDF5_USE_FILE_LOCKING"] = "FALSE"
-                file_args = os.path.join(cwd,"models",prediction_job_name,'my_model.hdf5')
-                st.write(file_args)
-                #file1 = h5py.File(file_args,'r')
-                model = tf.keras.models.load_model(file_args)
+                st.write(prediction_model_args)
+                model = tf.keras.models.load_model("my_model.hdf5")
                 prediction = import_and_predict(image, model)
                 prediction_job_name_list = prediction_job_name.split("_")
                 prediction_job_name = prediction_job_name_list[0]
-                prediction_dataset_args = os.path.join(cwd,"datasets",prediction_job_name,"Training")
+                prediction_dataset_args = os.path.join("/datasets",prediction_job_name,"Training")
                 #st.write(os.listdir (prediction_dataset_args))
                 st.write("Classification",np.argmax(prediction))
             st.success('Prediction Completed', icon="✅")
