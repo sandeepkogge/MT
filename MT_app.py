@@ -287,17 +287,17 @@ with tab2:
                 #subprocess.call(args, shell=True)
     st.success('Training Completed', icon="✅")
             
-            cols1, cols2 = st.columns(2)
+    cols1, cols2 = st.columns(2)
             
-            with cols1:
-                HtmlFile = open("Accuracy.html", 'r', encoding='utf-8')
-                source_code = HtmlFile.read() 
-                components.html(source_code, height=500)
+    with cols1:
+         HtmlFile = open("Accuracy.html", 'r', encoding='utf-8')
+         source_code = HtmlFile.read() 
+         components.html(source_code, height=500)
     
-            with cols2:
-                HtmlFile = open("Loss.html", 'r', encoding='utf-8')
-                source_code = HtmlFile.read() 
-                components.html(source_code, height=500)
+    with cols2:
+         HtmlFile = open("Loss.html", 'r', encoding='utf-8')
+         source_code = HtmlFile.read() 
+         components.html(source_code, height=500)
             
             #st.image("Accuracy.png",width = 600)
            # st.image("Loss.png",width = 600)
