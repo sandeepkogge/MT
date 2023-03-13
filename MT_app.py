@@ -21,7 +21,10 @@ from tensorflow.keras.layers import Flatten, Dense, Dropout
 from tensorflow.keras.models import Model
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import pandas as pd
+
+subprocess.call(['pip', 'install', 'scipy'])
 import scipy
+import scipy.integrate as integrate
 
 ##########################################################################################
 
