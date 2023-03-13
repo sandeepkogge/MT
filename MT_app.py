@@ -17,8 +17,8 @@ import webbrowser
 
 ##########################################################################################
 
-#cwd = os.getcwd ()
-#os.chdir(cwd)
+cwd = os.getcwd ()
+os.chdir(cwd)
 
 ##########################################################################################
 
@@ -39,10 +39,10 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 col1, col2 = st.columns(2)
 
 with col1:
-    st.image('Banner.JPG',use_column_width = 'always')
+    st.image('Banner.jpg',use_column_width = 'always')
 
 with col2:
-    st.image("Sunlux.JPG",width = 150)
+    st.image("Sunlux.jpg",width = 150)
     st.image("DG_Logo_April_22.jpg",width = 75)
 
 ##########################################################################################
@@ -174,14 +174,12 @@ with tab3:
         st.image(image, use_column_width=False)
         if st.button("Start Prediction"):
             with st.spinner('Prediction in Progress...'):
-                #prediction_model_args = "MT/models/" + str(prediction_job_name)
-                #prediction_model_args = prediction_model_args.replace(" ","")
-                st.write(prediction_model_args)
-                model = tf.keras.models.load_model("my_model.hdf5")
+                prediction_model_args = os.path.join(cwd,"models",prediction_job_name,"my_model.hdf5")
+                model = tf.keras.models.load_model(prediction_model_args)
                 prediction = import_and_predict(image, model)
                 prediction_job_name_list = prediction_job_name.split("_")
                 prediction_job_name = prediction_job_name_list[0]
-                prediction_dataset_args = os.path.join("/datasets",prediction_job_name,"Training")
-                #st.write(os.listdir (prediction_dataset_args))
+                prediction_dataset_args = os.path.join(cwd,"datasets",prediction_job_name,"Training")
+                st.write(os.listdir (prediction_dataset_args))
                 st.write("Classification",np.argmax(prediction))
             st.success('Prediction Completed', icon="✅")
