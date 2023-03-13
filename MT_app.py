@@ -46,10 +46,10 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 col1, col2 = st.columns(2)
 
 with col1:
-    st.image('Banner.JPG',use_column_width = 'always')
+    st.image('Banner.jpg',use_column_width = 'always')
 
 with col2:
-    st.image("Sunlux.JPG",width = 150)
+    st.image("Sunlux.jpg",width = 150)
     st.image("DG_Logo_April_22.jpg",width = 75)
 
 ##########################################################################################
@@ -285,19 +285,19 @@ with tab2:
     
                 #args ='python MT_app_model.py' + ' ' + '-en' + ' ' + str(epoch_num) + ' '+ '-es'+' '  + str(epoch_steps_num) + ' '+ '-c' + ' ' + str(classification) +' '+ '-dl' +' ' + str(dataset_location)+' '+ '-jn' +' ' + str(job_name)+' '+ '-it' +' ' + str(image_target_size)+' '+ '-mo' +' ' + str(model_option)+' '+ '-cg' +' ' + str(cpu_gpu)
                 #subprocess.call(args, shell=True)
-    st.success('Training Completed', icon="✅")
+        st.success('Training Completed', icon="✅")
             
-    cols1, cols2 = st.columns(2)
+        cols1, cols2 = st.columns(2)
             
-    with cols1:
-         HtmlFile = open("Accuracy.html", 'r', encoding='utf-8')
-         source_code = HtmlFile.read() 
-         components.html(source_code, height=500)
+        with cols1:
+            HtmlFile = open("Accuracy.html", 'r', encoding='utf-8')
+            source_code = HtmlFile.read() 
+            components.html(source_code, height=500)
     
-    with cols2:
-         HtmlFile = open("Loss.html", 'r', encoding='utf-8')
-         source_code = HtmlFile.read() 
-         components.html(source_code, height=500)
+        with cols2:
+            HtmlFile = open("Loss.html", 'r', encoding='utf-8')
+            source_code = HtmlFile.read() 
+            components.html(source_code, height=500)
             
             #st.image("Accuracy.png",width = 600)
            # st.image("Loss.png",width = 600)
