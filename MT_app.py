@@ -39,10 +39,10 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 col1, col2 = st.columns(2)
 
 with col1:
-    st.image('Banner.jpg',use_column_width = 'always')
+    st.image('Banner.JPG',use_column_width = 'always')
 
 with col2:
-    st.image("Sunlux.jpg",width = 150)
+    st.image("Sunlux.JPG",width = 150)
     st.image("DG_Logo_April_22.jpg",width = 75)
 
 ##########################################################################################
